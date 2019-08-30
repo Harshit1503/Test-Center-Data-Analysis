@@ -1,0 +1,29 @@
+#Module: Exams By Weekday BarPlot Query
+#Owner: Harshit Singh
+#Date Created: 08/06/2019
+#Date Last Modified: 08/26/2019
+#Vesrion: 1.1
+
+
+#Student Distribution query for AAH: 
+SELECT SITE, substring(DATENAME(WEEKDAY, ReservationStartTime), 1, 3) AS DAY_NAME, (DATEPART(WEEKDAY, ReservationStartTime) + 5)%7 + 1 AS WEEK_DAY, COUNT(*) AS COUNT FROM testTable WHERE datepart(year, cast(ReservationStartTime as datetime)) = ? and SITE = 'AAH' GROUP BY SITE, substring(DATENAME(WEEKDAY, ReservationStartTime), 1, 3), DATEPART(WEEKDAY, ReservationStartTime) ORDER BY WEEK_DAY;
+
+
+#Student Distribution query for CBB:
+SELECT SITE, substring(DATENAME(WEEKDAY, ReservationStartTime), 1, 3) AS DAY_NAME, (DATEPART(WEEKDAY, ReservationStartTime) + 5)%7 + 1 AS WEEK_DAY, COUNT(*) AS COUNT FROM testTable WHERE datepart(year, cast(ReservationStartTime as datetime)) = ? and SITE = 'CBB' GROUP BY SITE, substring(DATENAME(WEEKDAY, ReservationStartTime), 1, 3), DATEPART(WEEKDAY, ReservationStartTime) ORDER BY WEEK_DAY;
+
+
+#Student Distribution query for GAR:
+SELECT SITE, substring(DATENAME(WEEKDAY, ReservationStartTime), 1, 3) AS DAY_NAME, (DATEPART(WEEKDAY, ReservationStartTime) + 5)%7 + 1 AS WEEK_DAY, COUNT(*) AS COUNT FROM testTable WHERE datepart(year, cast(ReservationStartTime as datetime)) = ? and SITE = 'GAR' GROUP BY SITE, substring(DATENAME(WEEKDAY, ReservationStartTime), 1, 3), DATEPART(WEEKDAY, ReservationStartTime) ORDER BY WEEK_DAY;
+
+
+#Student Distribution query for all the years for AAH:
+SELECT SITE, substring(DATENAME(WEEKDAY, ReservationStartTime), 1, 3) AS DAY_NAME, (DATEPART(WEEKDAY, ReservationStartTime) + 5)%7 + 1 AS WEEK_DAY, COUNT(*) AS COUNT FROM testTable WHERE SITE = 'AAH' GROUP BY SITE, substring(DATENAME(WEEKDAY, ReservationStartTime), 1, 3), DATEPART(WEEKDAY, ReservationStartTime) ORDER BY WEEK_DAY;
+
+
+#Student Distribution query for all the years for CBB:
+SELECT SITE, substring(DATENAME(WEEKDAY, ReservationStartTime), 1, 3) AS DAY_NAME, (DATEPART(WEEKDAY, ReservationStartTime) + 5)%7 + 1 AS WEEK_DAY, COUNT(*) AS COUNT FROM testTable WHERE SITE = 'CBB' GROUP BY SITE, substring(DATENAME(WEEKDAY, ReservationStartTime), 1, 3), DATEPART(WEEKDAY, ReservationStartTime) ORDER BY WEEK_DAY;
+
+
+#Student Distribution query for all the years for GAR:
+SELECT SITE, substring(DATENAME(WEEKDAY, ReservationStartTime), 1, 3) AS DAY_NAME, (DATEPART(WEEKDAY, ReservationStartTime) + 5)%7 + 1 AS WEEK_DAY, COUNT(*) AS COUNT FROM testTable WHERE SITE = 'GAR' GROUP BY SITE, substring(DATENAME(WEEKDAY, ReservationStartTime), 1, 3), DATEPART(WEEKDAY, ReservationStartTime) ORDER BY WEEK_DAY;

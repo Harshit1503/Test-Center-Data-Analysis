@@ -1,0 +1,29 @@
+#Module: Student Distribution Pie Chart Query
+#Owner: Harshit Singh
+#Date Created: 05/05/2019
+#Date Last Modified: 08/26/2019
+#Vesrion: 1.1
+
+
+#Student Distribution query for AAH: 
+select count (*) as cnt  from testTable where datepart(year, cast(ReservationStartTime as datetime)) = ? and site = 'AAH';
+
+
+#Student Distribution query for CBB:
+select count (*) as cnt  from testTable where datepart(year, cast(ReservationStartTime as datetime)) = ? and site = 'CBB';
+
+
+#Student Distribution query for GAR:
+select count (*) as cnt  from testTable where datepart(year, cast(ReservationStartTime as datetime)) = ? and site = 'GAR';
+
+
+#Student Distribution query for all the years for AAH:
+select count (*) as cnt  from testTable where site = 'AAH';
+
+
+#Student Distribution query for all the years for CBB:
+select count (*) as cnt  from testTable where site = 'CBB';
+
+
+#Student Distribution query for all the years for GAR:
+select count (*) as cnt  from testTable where site = 'GAR';

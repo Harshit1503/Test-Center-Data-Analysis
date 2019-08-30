@@ -1,0 +1,21 @@
+#Module: Course Distribution Pie Chart Query
+#Owner: Harshit Singh
+#Date Created: 05/05/2019
+#Date Last Modified: 08/26/2019
+#Vesrion: 1.1
+
+
+#Student Distribution across the Course CourseWare:
+SELECT COUNT(*) as cnt FROM testTable WHERE EXAM_TYPE = 'CourseWare' and datepart(year, cast(ReservationStartTime as datetime)) = ?;
+
+
+#Student Distribution across the Course Blackboard:
+SELECT COUNT(*) as cnt FROM testTable WHERE EXAM_TYPE = 'Blackboard' and datepart(year, cast(ReservationStartTime as datetime)) = ?;
+
+
+#Student Distribution across the Course CourseWare for all the years:
+SELECT COUNT(*) as cnt FROM testTable WHERE EXAM_TYPE = 'CourseWare';
+
+
+#Student Distribution across the Course Blackboard for all the years:
+SELECT COUNT(*) as cnt FROM testTable WHERE EXAM_TYPE = 'Blackboard';

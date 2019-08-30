@@ -1,0 +1,17 @@
+#Module: Student Distribution Bar Plot Query
+#Owner: Harshit Singh
+#Date Created: 05/05/2019
+#Date Last Modified: 08/26/2019
+#Vesrion: 1.1
+
+
+#Student Distribution for the site AAH in last 3 years:
+select count (*) as cnt  from testTable where datepart(year, cast(ReservationStartTime as datetime)) = ? and site = 'AAH';
+
+
+#Student Distribution for the site CBB in last 3 years:
+select count (*) as cnt  from testTable where datepart(year, cast(ReservationStartTime as datetime)) = ? and site = 'CBB';
+
+
+#Student Distribution for the site GAR in last 3 years:
+select count (*) as cnt  from testTable where datepart(year, cast(ReservationStartTime as datetime)) = ? and site = 'GAR';

@@ -1,0 +1,9 @@
+#Module: Years List Query
+#Owner: Harshit Singh
+#Date Created: 05/07/2019
+#Date Last Modified: 08/23/2019
+#Vesrion: 1.1
+
+
+#List of Years in the table:
+SELECT DISTINCT datepart(year, cast(ReservationStartTime as datetime)) AS YEARS FROM testTable ORDER BY YEARS DESC;
