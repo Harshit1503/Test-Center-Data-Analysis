@@ -1,2 +1,2 @@
 # Test Center Data Analysis
-The following project shows the Test Center Data Analysis done using Python and SQLServer.
+This project presents the Test Center Data Analysis performed using Python and SQL Server.
